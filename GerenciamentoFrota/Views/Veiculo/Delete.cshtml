@@ -1,0 +1,46 @@
+﻿@model GerenciamentoFrota.Models.Veiculo
+
+<h4 class="text-center text-red">Tem certeza que quer deletar esses dados?</h4>
+
+<table class="table table-striped table-bordered table-responsive text-center">
+	<tr>
+		<th class="text-center">
+			Chassi
+		</th>
+		<th class="text-center">
+			Tipo
+		</th>
+		<th class="text-center">
+			Passageiros
+		</th>
+		<th class="text-center">
+			Cor
+		</th>
+	</tr>
+	<tr>
+		<td>
+			@Html.DisplayFor(model => model.Chassi)
+		</td>
+		<td>
+			@Html.DisplayFor(model => model.Tipo)
+		</td>
+		<td>
+			@Html.DisplayFor(model => model.Passageiros)
+		</td>
+		<td>
+			@Html.DisplayFor(model => model.Cor)
+		</td>
+	</tr>
+
+</table>
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+	<div class="form-actions text-center">
+		@Html.ActionLink("Cancelar", "Index", "",new { @class="btn btn-primary btn-lg" })
+		<input type="submit" value="Confirmar" class="btn btn-danger btn-lg" />
+
+	</div>
+}
